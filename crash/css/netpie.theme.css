@@ -5,8 +5,9 @@
 }
 
 body {
-    background-color: #ECF0F5;
-    color: #262626;
+    background-image: url("test.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
 }
 
 #toggle-header {
