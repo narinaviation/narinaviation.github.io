@@ -129,7 +129,8 @@
     "appid": "NALCSmartHome",
     "key": "D2WTKeC0OjxwgeZ",
     "secret": "jQAWVAcC1OzY0DWKvKPKZL4SN",
-    "topics": "/#"
+    "topics": "/#",
+    "onConnectedAction": "var  theme = document.createElement('link');         theme.id = 'netpie-theme-css';         theme.href = 'css/netpie.theme.css';         theme.rel = 'stylesheet';         document.head.appendChild(theme);         np_theme = \"netpie\";"
    }
   }
  ],
