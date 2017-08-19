@@ -54,7 +54,7 @@ freeboard.on('load_theme',function() {
     var data = window.localStorage.getItem("netpie.freeboard.dashboard");
     var datajson = JSON.parse(data);
     if(datajson!==null){
-        if(datajson.theme===null || datajson.theme=="netpie"){
+        if(datajson.theme===null || datajson.theme=="default"){
             if(stylesheet!=null){
                 stylesheet.parentNode.removeChild(stylesheet);
             }
