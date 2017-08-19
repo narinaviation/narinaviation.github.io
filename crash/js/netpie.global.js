@@ -37,7 +37,7 @@ function toggletheme()
 }
 
 if (typeof np_theme === "undefined") {
-    np_theme = "default";
+    np_theme = "netpie";
 }
 
 function saveTheme(){
@@ -54,11 +54,11 @@ freeboard.on('load_theme',function() {
     var data = window.localStorage.getItem("netpie.freeboard.dashboard");
     var datajson = JSON.parse(data);
     if(datajson!==null){
-        if(datajson.theme===null || datajson.theme=="default"){
+        if(datajson.theme===null || datajson.theme=="netpie"){
             if(stylesheet!=null){
                 stylesheet.parentNode.removeChild(stylesheet);
             }
-            np_theme = "default";
+            np_theme = "netpie";
             document.getElementById('theme-toggle').checked = false;
         }
         if(datajson.theme=="netpie"){
@@ -72,7 +72,7 @@ freeboard.on('load_theme',function() {
         }
     }
     else{
-        np_theme = "default";
+        np_theme = "netpie";
         document.getElementById('theme-toggle').checked = false;
     }
     saveTheme();
