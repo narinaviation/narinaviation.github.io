@@ -6,6 +6,8 @@
 
 body {
     background-image: url("kmitl.jpg");
+    background-position: center top;
+    background-repeat: repeat-x;
 }
 
 #toggle-header {
