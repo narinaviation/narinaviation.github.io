@@ -1,0 +1,90 @@
+{
+ "version": "application/octet-stream",
+ "allow_edit": true,
+ "plugins": [],
+ "panes": [
+  {
+   "title": "NALC EASYDIM V1",
+   "width": 1,
+   "row": {
+    "1": 1,
+    "2": 1,
+    "3": 16
+   },
+   "col": {
+    "1": 1,
+    "2": 1,
+    "3": 2
+   },
+   "col_width": 1,
+   "widgets": [
+    {
+     "type": "picture",
+     "settings": {
+      "src": "https://narinaviation.github.io/crash/EasyDim.png",
+      "refresh": 60
+     }
+    },
+    {
+     "type": "text_widget",
+     "settings": {
+      "title": "คำสั่งล่าสุด",
+      "size": "regular",
+      "value": "datasources[\"NALCTEST\"][\"/NALC/gearname/easydim\"]",
+      "animate": true
+     }
+    },
+    {
+     "type": "Toggle",
+     "settings": {
+      "caption": "โหมดมือถือ",
+      "ontext": "เปิด",
+      "offtext": "ปิด",
+      "onaction": "microgear[\"NALCTEST\"].chat(\"easydim\",\"ON\");",
+      "offaction": "microgear[\"NALCTEST\"].chat(\"easydim\",\"OFF\");"
+     }
+    },
+    {
+     "type": "Slider",
+     "settings": {
+      "caption": "ความสว่าง",
+      "color": "yellow",
+      "showvalue": 1,
+      "min": "20",
+      "max": "60",
+      "step": 1,
+      "initialvalue": "0",
+      "onSlide": "microgear[\"NALCTEST\"].chat(\"easydim\",value);",
+      "onStop": "microgear[\"NALCTEST\"].chat(\"easydim\",value);"
+     }
+    }
+   ]
+  }
+ ],
+ "datasources": [
+  {
+   "name": "HANG",
+   "type": "netpie_microgear",
+   "settings": {
+    "name": "HANG",
+    "appid": "NALCSmartHome",
+    "key": "D2WTKeC0OjxwgeZ",
+    "secret": "jQAWVAcC1OzY0DWKvKPKZL4SN",
+    "topics": "/#"
+   }
+  },
+  {
+   "name": "NALCTEST",
+   "type": "netpie_microgear",
+   "settings": {
+    "name": "NALCTEST",
+    "appid": "NALC",
+    "key": "H31mU5VB7AIgxTw",
+    "secret": "QUdN2zngICyFfoZvcBdEOhI9F",
+    "topics": "/#"
+   }
+  }
+ ],
+ "columns": 3,
+ "theme": "default"
+}
