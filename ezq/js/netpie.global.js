@@ -1,30 +1,24 @@
 /*  NETPIE global functions                                         */
 
-if (typeof globalStore === "undefined") 
-{
+if (typeof globalStore === "undefined") {
     globalStore = {};
 }
 
-function runCode(cmd) 
-{
+function runCode(cmd) {
     eval(eval(cmd));
 }
 
-function randomString(length) 
-{
+function randomString(length) {
     return Math.round((Math.pow(36, length + 1) - Math.random() * Math.pow(36, length))).toString(36).slice(1);
 }
 
-function toggletheme() 
-{
+function toggletheme() {
     var stylesheet = document.getElementById('netpie-theme-css');
-    if(stylesheet!=null)
-    {
+    if(stylesheet!=null){
         stylesheet.parentNode.removeChild(stylesheet);
-        np_theme = "netpie";
+        np_theme = "default";
     }
-    else
-    {
+    else{
         var  theme = document.createElement('link');
         theme.id = 'netpie-theme-css';
         theme.href = 'css/netpie.theme.css';
@@ -37,7 +31,7 @@ function toggletheme()
 }
 
 if (typeof np_theme === "undefined") {
-    np_theme = "netpie";
+    np_theme = "default";
 }
 
 function saveTheme(){
@@ -58,7 +52,7 @@ freeboard.on('load_theme',function() {
             if(stylesheet!=null){
                 stylesheet.parentNode.removeChild(stylesheet);
             }
-            np_theme = "netpie";
+            np_theme = "default";
             document.getElementById('theme-toggle').checked = false;
         }
         if(datajson.theme=="netpie"){
@@ -72,7 +66,7 @@ freeboard.on('load_theme',function() {
         }
     }
     else{
-        np_theme = "netpie";
+        np_theme = "default";
         document.getElementById('theme-toggle').checked = false;
     }
     saveTheme();

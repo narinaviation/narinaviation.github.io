@@ -5,9 +5,8 @@
 }
 
 body {
-    background-image: url("kmitl.jpg");
-    background-position: center top;
-    background-repeat: repeat-x;
+    background-color: #ECF0F5;
+    color: #262626;
 }
 
 #toggle-header {
