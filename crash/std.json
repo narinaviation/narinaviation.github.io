@@ -4,7 +4,7 @@
  "plugins": [],
  "panes": [
   {
-   "title": "์NARIN EASY-Q STUDENT",
+   "title": "NARIN EASY-Q STUDENT",
    "width": 1,
    "row": {
     "2": 1,
@@ -84,5 +84,5 @@
   }
  ],
  "columns": 3,
- "theme": "default"
+ "theme": "netpie"
 }
