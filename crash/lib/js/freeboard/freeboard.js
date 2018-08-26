@@ -466,7 +466,8 @@ var freeboard = (function()
 					success: function(data)
 					{
 						theFreeboardModel.loadDashboard(data);
-
+						theFreeboardModel.setEditing(false);
+						
 						if(_.isFunction(finishedCallback))
 						{
 							finishedCallback();
