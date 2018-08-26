@@ -1,0 +1,150 @@
+{
+ "version": "application/octet-stream",
+ "allow_edit": true,
+ "plugins": [],
+ "panes": [
+  {
+   "title": "NALC & KMITL : \"C.R.A.S.H\"",
+   "width": 1,
+   "row": {
+    "1": 1,
+    "2": 15,
+    "3": 1
+   },
+   "col": {
+    "1": 1,
+    "2": 1,
+    "3": 2
+   },
+   "col_width": 1,
+   "widgets": [
+    {
+     "type": "indicator",
+     "settings": {
+      "title": "สถานะราวตากผ้า",
+      "value": "datasources[\"NALC\"][\"/NALCSmartHome/gearname/crash/status\"]==\"OUT\"",
+      "on_text": "ราวอยู่กลางแดด!!!",
+      "off_text": "ราวอยู่ในร่ม..."
+     }
+    },
+    {
+     "type": "Toggle",
+     "settings": {
+      "caption": "โหมดการทำงาน",
+      "state": "datasources[\"NALC\"][\"/NALCSmartHome/gearname/crash/mode\"]==\"AUTO\"",
+      "ontext": "อัตโนมัติ",
+      "offtext": "แมนวล",
+      "onaction": "microgear[\"NALC\"].chat(\"crash\",\"SET_MODE_AUTO\");",
+      "offaction": "microgear[\"NALC\"].chat(\"crash\",\"SET_MODE_MAN\");"
+     }
+    },
+    {
+     "type": "Button",
+     "settings": {
+      "caption": "ตากผ้า",
+      "text": "นำผ้าออกแดด",
+      "color": "green",
+      "onClick": "microgear[\"NALC\"].chat(\"crash\",\"MOVE_OUT_MAN\");"
+     }
+    },
+    {
+     "type": "Button",
+     "settings": {
+      "caption": "เก็บผ้า",
+      "text": "นำผ้าเข้าร่ม",
+      "color": "red",
+      "onClick": "microgear[\"NALC\"].chat(\"crash\",\"MOVE_IN_MAN\");"
+     }
+    },
+    {
+     "type": "indicator",
+     "settings": {
+      "title": "สถานะโมดูลตรวจอากาศ",
+      "value": "datasources[\"NALC\"][\"alias\"][\"perceptron\"]!=null",
+      "on_text": "ออนไลน์!!!",
+      "off_text": "ออฟไลน์..."
+     }
+    },
+    {
+     "type": "text_widget",
+     "settings": {
+      "title": "อุณหภูมิ",
+      "size": "regular",
+      "value": "datasources[\"NALC\"][\"/NALCSmartHome/gearname/webapp\"].split(\":\")[3]",
+      "sparkline": false,
+      "animate": true,
+      "units": "องศาเซลเซียส"
+     }
+    },
+    {
+     "type": "text_widget",
+     "settings": {
+      "title": "ความชื้นสัมพัทธ์",
+      "size": "regular",
+      "value": "datasources[\"NALC\"][\"/NALCSmartHome/gearname/webapp\"].split(\":\")[2] ",
+      "animate": true,
+      "units": "%"
+     }
+    },
+    {
+     "type": "text_widget",
+     "settings": {
+      "title": "ความกดอากาศ",
+      "size": "regular",
+      "value": "datasources[\"NALC\"][\"/NALCSmartHome/gearname/webapp\"].split(\":\")[4] ",
+      "animate": true,
+      "units": "มิลลิบาร์"
+     }
+    },
+    {
+     "type": "text_widget",
+     "settings": {
+      "title": "ระดับแสงสว่าง",
+      "size": "regular",
+      "value": "Math.round(((datasources[\"NALC\"][\"/NALCSmartHome/gearname/webapp\"].split(\":\")[5])/1024)*100)",
+      "sparkline": false,
+      "animate": true,
+      "units": "%"
+     }
+    },
+    {
+     "type": "text_widget",
+     "settings": {
+      "title": "การเกิดฝน",
+      "size": "regular",
+      "value": "Math.round(datasources[\"NALC\"][\"/NALCSmartHome/gearname/webapp\"].split(\":\")[6]*100/1024) + \"%\"",
+      "sparkline": false,
+      "animate": false
+     }
+    },
+    {
+     "type": "Slider",
+     "settings": {
+      "color": "grey",
+      "showvalue": 1,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "initialvalue": "0"
+     }
+    }
+   ]
+  }
+ ],
+ "datasources": [
+  {
+   "name": "NALC",
+   "type": "netpie_microgear",
+   "settings": {
+    "name": "NALC",
+    "appid": "NALCSmartHome",
+    "key": "D2WTKeC0OjxwgeZ",
+    "secret": "jQAWVAcC1OzY0DWKvKPKZL4SN",
+    "topics": "/#",
+    "onConnectedAction": "var  theme = document.createElement('link');         theme.id = 'netpie-theme-css';         theme.href = 'css/netpie.theme.css';         theme.rel = 'stylesheet';         document.head.appendChild(theme);         np_theme = \"netpie\";"
+   }
+  }
+ ],
+ "columns": 3,
+ "theme": "netpie"
+}
