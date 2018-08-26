@@ -1,0 +1,75 @@
+{
+ "version": "application/octet-stream",
+ "allow_edit": true,
+ "plugins": [],
+ "panes": [
+  {
+   "title": "์NARIN EASY-Q STUDENT",
+   "width": 1,
+   "row": {
+    "2": 1,
+    "3": 1
+   },
+   "col": {
+    "2": 2,
+    "3": 2
+   },
+   "col_width": 1,
+   "widgets": [
+    {
+     "type": "text_widget",
+     "settings": {
+      "title": "EASY-Q",
+      "size": "regular",
+      "value": "\"สำหรับนักศึกษา\"",
+      "animate": true
+     }
+    },
+    {
+     "type": "text_widget",
+     "settings": {
+      "title": "คิวที่จองไว้",
+      "size": "big",
+      "value": "if(datasources[\"DS\"][\"/EasyQ/gearname/easyq_clients\"].split(\",\")[0] == document.getElementById(\"1661616285\").value)\n    {\n        if(datasources[\"DS\"][\"/EasyQ/gearname/easyq_clients\"].split(\",\")[1]!=0)\n            {\n                return datasources[\"DS\"][\"/EasyQ/gearname/easyq_clients\"].split(\",\")[1]\n            }\n        else\n            {\n                return \"--\"\n            }\n    }\nelse\n    {\n        \n    }",
+      "animate": true
+     }
+    },
+    {
+     "type": "Button",
+     "settings": {
+      "caption": "จองคิว",
+      "text": "กดเพื่อจองคิวตรวจ",
+      "color": "red",
+      "onClick": "var tableID = document.getElementById(\"1661616285\").value;\nmsg = tableID\nmicrogear[\"DS\"].chat(\"easyq_server\",msg);"
+     }
+    },
+    {
+     "type": "text_widget",
+     "settings": {
+      "title": "ปัจจุบันถึงคิวที่",
+      "size": "regular",
+      "value": "datasources[\"DS\"][\"/EasyQ/gearname/easyq_instructor_q\"]",
+      "animate": true,
+      "units": ""
+     }
+    }
+   ]
+  }
+ ],
+ "datasources": [
+  {
+   "name": "DS",
+   "type": "netpie_microgear",
+   "settings": {
+    "name": "DS",
+    "appid": "EasyQ",
+    "key": "C9m1YRZBdLtj6ZY",
+    "secret": "5COrooZTgmjU3xCAjr3bJewKE",
+    "topics": "/#",
+    "onConnectedAction": "var  theme = document.createElement('link');         theme.id = 'netpie-theme-css';         theme.href = 'css/netpie.theme.css';         theme.rel = 'stylesheet';         document.head.appendChild(theme);         np_theme = \"netpie\";"
+   }
+  }
+ ],
+ "columns": 3,
+ "theme": "default"
+}
