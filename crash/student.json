@@ -75,8 +75,8 @@
    "settings": {
     "name": "NALC",
     "appid": "NALC",
-    "key": "H31mU5VB7AIgxTw",
-    "secret": "QUdN2zngICyFfoZvcBdEOhI9F",
+    "key": "vuwT7d3aJMvZxW0",
+    "secret": "9u0QtrxCzGqnncJj2r907DN0P",
     "topics": "/#",
     "onConnectedAction": "var  theme = document.createElement('link');         theme.id = 'netpie-theme-css';         theme.href = 'css/netpie.theme.css';         theme.rel = 'stylesheet';         document.head.appendChild(theme);         np_theme = \"netpie\";"
    }
