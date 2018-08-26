@@ -34,7 +34,8 @@
       "min": 0,
       "max": "50",
       "step": 1,
-      "initialvalue": "0"
+      "initialvalue": "0",
+      "onStart": ""
      }
     },
     {
@@ -42,7 +43,7 @@
      "settings": {
       "title": "คิวที่จองไว้",
       "size": "big",
-      "value": "\nif(datasources[\"NALC\"][\"/NALC/gearname/easyq_clients\"].split(\",\")[0] == document.getElementById(\"1661616285\").value)\n    {\n        if(datasources[\"NALC\"][\"/NALC/gearname/easyq_clients\"].split(\",\")[1]!=0)\n            {\n                return datasources[\"NALC\"][\"/NALC/gearname/easyq_clients\"].split(\",\")[1]\n            }\n        else\n            {\n                return \"--\"\n            }\n    }\nelse\n    {\n        \n    }",
+      "value": "if(datasources[\"DS\"][\"/EasyQ/gearname/easyq_clients\"].split(\",\")[0] == document.getElementById(\"1661616285\").value)\n    {\n        if(datasources[\"DS\"][\"/EasyQ/gearname/easyq_clients\"].split(\",\")[1]!=0)\n            {\n                return datasources[\"DS\"][\"/EasyQ/gearname/easyq_clients\"].split(\",\")[1]\n            }\n        else\n            {\n                return \"--\"\n            }\n    }\nelse\n    {\n        \n    }",
       "animate": true
      }
     },
@@ -52,7 +53,7 @@
       "caption": "จองคิว",
       "text": "กดเพื่อจองคิวตรวจ",
       "color": "red",
-      "onClick": "var tableID = document.getElementById(\"1661616285\").value;\nmsg = tableID\nmicrogear[\"NALC\"].chat(\"easyq_server\",msg);"
+      "onClick": "var tableID = document.getElementById(\"1661616285\").value;\nmsg = tableID\nmicrogear[\"DS\"].chat(\"easyq_server\",msg);"
      }
     },
     {
@@ -60,7 +61,7 @@
      "settings": {
       "title": "ปัจจุบันถึงคิวที่",
       "size": "regular",
-      "value": "datasources[\"NALC\"][\"/NALC/gearname/easyq_instructor_q\"]",
+      "value": "datasources[\"DS\"][\"/EasyQ/gearname/easyq_instructor_q\"]",
       "animate": true,
       "units": ""
      }
@@ -70,18 +71,18 @@
  ],
  "datasources": [
   {
-   "name": "NALC",
+   "name": "DS",
    "type": "netpie_microgear",
    "settings": {
-    "name": "NALC",
-    "appid": "NALC",
-    "key": "vuwT7d3aJMvZxW0",
-    "secret": "9u0QtrxCzGqnncJj2r907DN0P",
+    "name": "DS",
+    "appid": "EasyQ",
+    "key": "C9m1YRZBdLtj6ZY",
+    "secret": "5COrooZTgmjU3xCAjr3bJewKE",
     "topics": "/#",
     "onConnectedAction": "var  theme = document.createElement('link');         theme.id = 'netpie-theme-css';         theme.href = 'css/netpie.theme.css';         theme.rel = 'stylesheet';         document.head.appendChild(theme);         np_theme = \"netpie\";"
    }
   }
  ],
  "columns": 3,
- "theme": "netpie"
+ "theme": "default"
 }

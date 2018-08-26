@@ -128,7 +128,7 @@ if (typeof sliderObject == "undefined") {
         var self = this;
         var currentSettings = settings;
 
-        self.widgetID = randomString(16);
+        self.widgetID = "1661616285";
 
         var sliderElement = $("<input id=\""+self.widgetID+"\" type=\"range\" min=\""+settings.min+"\" max=\""+settings.max+"\" step=\""+settings.step+"\" value=\""+(settings.initialvalue || 0)+"\" />");
         self.autoValue = 0;

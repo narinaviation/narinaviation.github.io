@@ -30,7 +30,7 @@
      "settings": {
       "title": "จำนวนคิวที่ยังรออยู่...",
       "size": "regular",
-      "value": "if(datasources[\"NALC\"][\"/NALC/gearname/easyq_instructor_w\"] > 9000)\n    {\n        return \"--\";\n    }\nelse\n    {\n        return datasources[\"NALC\"][\"/NALC/gearname/easyq_instructor_w\"];\n    }",
+      "value": "if(datasources[\"DS\"][\"/EasyQ/gearname/easyq_instructor_w\"] > 9000)\n    {\n        return \"--\";\n    }\nelse\n    {\n        return datasources[\"DS\"][\"/EasyQ/gearname/easyq_instructor_w\"];\n    }",
       "animate": true,
       "units": "คิว"
      }
@@ -40,7 +40,7 @@
      "settings": {
       "title": "คิวปัจจุบัน",
       "size": "regular",
-      "value": "if(datasources[\"NALC\"][\"/NALC/gearname/easyq_instructor_q\"] > 9000)\n    {\n        return \"--\";\n    }\nelse\n    {\n        return datasources[\"NALC\"][\"/NALC/gearname/easyq_instructor_q\"];\n    }",
+      "value": "if(datasources[\"DS\"][\"/EasyQ/gearname/easyq_instructor_q\"] > 9000)\n    {\n        return \"--\";\n    }\nelse\n    {\n        return datasources[\"DS\"][\"/EasyQ/gearname/easyq_instructor_q\"];\n    }",
       "animate": true
      }
     },
@@ -49,7 +49,7 @@
      "settings": {
       "title": "หมายเลขโต๊ะ",
       "size": "big",
-      "value": "if(datasources[\"NALC\"][\"/NALC/gearname/easyq_instructor_t\"] > 9000)\n    {\n        return \"--\";\n    }\nelse\n    {\n        return datasources[\"NALC\"][\"/NALC/gearname/easyq_instructor_t\"];\n    }",
+      "value": "if(datasources[\"DS\"][\"/EasyQ/gearname/easyq_instructor_t\"] > 9000)\n    {\n        return \"--\";\n    }\nelse\n    {\n        return datasources[\"DS\"][\"/EasyQ/gearname/easyq_instructor_t\"];\n    }",
       "animate": true
      }
     },
@@ -59,7 +59,7 @@
       "caption": "คิวต่อไป",
       "text": "กดเพื่อข้ามคิว",
       "color": "green",
-      "onClick": "microgear[\"NALC\"].chat(\"easyq_server\",\"NEXT\");"
+      "onClick": "microgear[\"DS\"].chat(\"easyq_server\",\"NEXT\");"
      }
     }
    ]
@@ -67,18 +67,18 @@
  ],
  "datasources": [
   {
-   "name": "NALC",
+   "name": "DS",
    "type": "netpie_microgear",
    "settings": {
-    "name": "NALC",
-    "appid": "NALC",
-    "key": "H31mU5VB7AIgxTw",
-    "secret": "QUdN2zngICyFfoZvcBdEOhI9F",
+    "name": "DS",
+    "appid": "EasyQ",
+    "key": "C9m1YRZBdLtj6ZY",
+    "secret": "5COrooZTgmjU3xCAjr3bJewKE",
     "topics": "/#",
     "onConnectedAction": "var  theme = document.createElement('link');         theme.id = 'netpie-theme-css';         theme.href = 'css/netpie.theme.css';         theme.rel = 'stylesheet';         document.head.appendChild(theme);         np_theme = \"netpie\";"
    }
   }
  ],
  "columns": 3,
- "theme": "netpie"
+ "theme": "default"
 }
