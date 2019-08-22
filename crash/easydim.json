@@ -4,16 +4,12 @@
  "plugins": [],
  "panes": [
   {
-   "title": "NALC EASYDIM V1",
+   "title": "TE SMARTPLUG v 1.2",
    "width": 1,
    "row": {
-    "1": 1,
-    "2": 1,
     "3": 1
    },
    "col": {
-    "1": 1,
-    "2": 1,
     "3": 2
    },
    "col_width": 1,
@@ -21,41 +17,30 @@
     {
      "type": "picture",
      "settings": {
-      "src": "https://narinaviation.github.io/crash/EasyDim.png",
+      "src": "https://narinaviation.github.io/crash/smartplug.png",
       "refresh": 60
-     }
-    },
-    {
-     "type": "text_widget",
-     "settings": {
-      "title": "คำสั่งล่าสุด",
-      "size": "regular",
-      "value": "datasources[\"NALCTEST\"][\"/NALC/gearname/easydim\"]",
-      "animate": true
      }
     },
     {
      "type": "Toggle",
      "settings": {
-      "caption": "โหมดมือถือ",
+      "caption": "ช่อง 1 (หลอดไฟ)",
+      "state": "datasources[\"kmitlopenhouse\"][\"/KMITL/smartplug/state1\"]==1",
       "ontext": "เปิด",
       "offtext": "ปิด",
-      "onaction": "microgear[\"NALCTEST\"].chat(\"easydim\",\"ON\");",
-      "offaction": "microgear[\"NALCTEST\"].chat(\"easydim\",\"OFF\");"
+      "onaction": "microgear[\"kmitlopenhouse\"].chat(\"smartplug\",\"S11\");",
+      "offaction": "microgear[\"kmitlopenhouse\"].chat(\"smartplug\",\"S10\");"
      }
     },
     {
-     "type": "Slider",
+     "type": "Toggle",
      "settings": {
-      "caption": "ความสว่าง",
-      "color": "yellow",
-      "showvalue": 1,
-      "min": "20",
-      "max": "60",
-      "step": 1,
-      "initialvalue": "0",
-      "onSlide": "microgear[\"NALCTEST\"].chat(\"easydim\",value);",
-      "onStop": "microgear[\"NALCTEST\"].chat(\"easydim\",value);"
+      "caption": "ช่อง 2 (พัดลม)",
+      "state": "datasources[\"kmitlopenhouse\"][\"/KMITL/smartplug/state2\"]==1",
+      "ontext": "เปิด",
+      "offtext": "ปิด",
+      "onaction": "microgear[\"kmitlopenhouse\"].chat(\"smartplug\",\"S21\");",
+      "offaction": "microgear[\"kmitlopenhouse\"].chat(\"smartplug\",\"S20\");"
      }
     }
    ]
@@ -63,24 +48,13 @@
  ],
  "datasources": [
   {
-   "name": "HANG",
+   "name": "kmitlopenhouse",
    "type": "netpie_microgear",
    "settings": {
-    "name": "HANG",
-    "appid": "NALCSmartHome",
-    "key": "D2WTKeC0OjxwgeZ",
-    "secret": "jQAWVAcC1OzY0DWKvKPKZL4SN",
-    "topics": "/#"
-   }
-  },
-  {
-   "name": "NALCTEST",
-   "type": "netpie_microgear",
-   "settings": {
-    "name": "NALCTEST",
-    "appid": "NALC",
-    "key": "H31mU5VB7AIgxTw",
-    "secret": "QUdN2zngICyFfoZvcBdEOhI9F",
+    "name": "kmitlopenhouse",
+    "appid": "KMITL",
+    "key": "QjTOAiF5u3mbzTC",
+    "secret": "sMT5sB3DfDPGEREUCcJEbe5kx",
     "topics": "/#"
    }
   }
